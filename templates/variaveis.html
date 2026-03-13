@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block centro_pagina %}
+
+<body>
+ <h1>Exibindo variaveis</h1>
+
+
+ <p>Duas chaves exibe a variavel: {{ nome }}</p>
+ <p>Podemos fazer contas simples ao exibir a variavel: {{2026 - idade}}</p>
+
+ <br><br>
+
+ {% if idade >= 18 %}
+ <div class="alert alert-success" role="alert">
+  Parabéns {{ nome }} você pode entrar!!
+</div>
+
+{% else %}
+<div class="alert alert-danger" role="alert">
+  DEsculpe {{ nome }} você não pode entrar!!
+</div>
+
+{% endif %}
+
+{% endblock %}

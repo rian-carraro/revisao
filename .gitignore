@@ -10,3 +10,5 @@ __pycache__/
 
 # Variáveis de ambiente sensíveis (senhas, chaves)
 .env
+
+index copy.html

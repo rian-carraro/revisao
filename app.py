@@ -18,20 +18,17 @@ def home():
 
 @app.route('/revisao')
 def revisao():
-    return '''
-    <h1>Revisão</h1>
-    <p>Conteúdo da página de revisão.</p>
-    <p style="color: red;">Esta é uma mensagem de revisão importante!</p>
-    '''
+    nome='Rian'
+    return render_template('variaveis.html', idade=18, nome=nome)
+
+@app.route('/produtos/cadastar')
+def cadastrar_produtos():
+    return render_template('produtos/form-produto.html')
 
 @app.route('/revisao/<nome>/<int:idade>')
 def parametros(nome, idade):
     ano_nascimento = 2026 - idade
-    return f'''
-    <h1>Revisão</h1>
-    <p style="color: blue;">Olá, {nome}! Você tem {idade} anos.</p>
-    <p>Seu ano de nascimento é {ano_nascimento}.</p>
-    '''
+    return render_template ('variaveis.html', nome=nome, idade=idade,)
 
 # Bloco de execução: só roda quando o arquivo é executado diretamente
 if __name__ == '__main__':
